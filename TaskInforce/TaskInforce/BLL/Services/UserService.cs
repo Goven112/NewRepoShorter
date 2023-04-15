@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using TaskInforce.BLL.Constants;
 using TaskInforce.BLL.DTO;
 using TaskInforce.BLL.Interfaces;
 using TaskInforce.BLL.Mapper;
@@ -161,7 +162,7 @@ namespace TaskInforce.BLL.Services
                
                 if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                 {
-                    throw new SecurityTokenException("Invalid token");
+                    throw new SecurityTokenException(ErrorMessages.Invalid_Token);
                 }
 
 

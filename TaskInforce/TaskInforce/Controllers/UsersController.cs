@@ -79,7 +79,7 @@ namespace TaskInforce.Controllers
             }
             catch (OperationCanceledException)
             {
-                return Unauthorized("Invalid Attempt!");
+                return Unauthorized(ErrorMessages.Invalid_Attempt);
             }
         }
 
@@ -94,7 +94,7 @@ namespace TaskInforce.Controllers
             }
             catch (OperationCanceledException)
             {
-                Unauthorized("Invalid attempt!");
+                Unauthorized(ErrorMessages.Invalid_Attempt);
             }
         }
 

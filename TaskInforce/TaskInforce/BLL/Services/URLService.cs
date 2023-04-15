@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using TaskInforce.BLL.Constants;
 using TaskInforce.BLL.DTO;
 using TaskInforce.BLL.Interfaces;
 using TaskInforce.BLL.Mapper;
@@ -84,12 +85,12 @@ namespace TaskInforce.BLL.Services
 
             if (url is not null) 
             { 
-                throw new ArgumentException("URL already exist");
+                throw new ArgumentException(ErrorMessages.URL_Already_Exist);
             }
 
             if (!validate)
             {
-                throw new ArgumentException("URL is not valid");
+                throw new ArgumentException(ErrorMessages.URL_Is_Not_Valid);
             }
 
             await _urlRepository.AddAsync(AutoMapper<CreateShortUrlDTO, Url>.Map(entity));
